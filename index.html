@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>رسالة سرية إلى جنى ❤️</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Cairo,sans-serif;color:#fff;background:#10080f;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;background:radial-gradient(ellipse at top,#512039 0%,transparent 55%),radial-gradient(ellipse at bottom,#30102d 0%,transparent 55%);z-index:-2}
+button,input{font:inherit}
+button{cursor:pointer;transition:.25s}
+button:hover{transform:translateY(-2px);filter:brightness(1.12)}
+#login{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:22px}
+.login-card{width:100%;max-width:410px;text-align:center;padding:36px 25px;border:1px solid #ffffff20;border-radius:28px;background:#ffffff09;backdrop-filter:blur(18px);box-shadow:0 0 70px #ff3d8d12;animation:appear 1s ease}
+.heart{font-size:58px;animation:beat 1.4s infinite}
+h1{font-size:clamp(26px,6vw,38px);margin:12px 0}
+p{line-height:2;color:#e5d5e0}
+input{width:100%;padding:14px;background:#ffffff0b;border:1px solid #ffffff30;border-radius:14px;color:white;text-align:center;outline:none;margin:12px 0}
+input:focus{border-color:#ff72ae}
+.primary{width:100%;border:0;border-radius:14px;padding:13px;background:linear-gradient(120deg,#fa438b,#a02d72);color:white;font-weight:900;box-shadow:0 8px 28px #ed328c30}
+#error{color:#ff94b9;min-height:28px}
+#site{display:none}
+.hero{min-height:82vh;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:35px 20px}
+.eyebrow{color:#ff9dc6;letter-spacing:2px;font-size:12px}
+.hero h1{font-size:clamp(43px,10vw,80px);background:linear-gradient(120deg,#fff,#ff9fc8,#ffdfec);background-clip:text;-webkit-background-clip:text;color:transparent}
+.hero p{max-width:520px}
+.section{max-width:760px;margin:0 auto;padding:35px 20px}
+.glass{padding:clamp(22px,5vw,40px);border:1px solid #ffffff18;border-radius:25px;background:#ffffff08;backdrop-filter:blur(15px);box-shadow:0 20px 70px #00000020}
+.section h2{text-align:center;color:#ffacd0}
+.letter{white-space:pre-line;font-size:16px;line-height:2.4;color:#f7eaf1}
+.btn{display:inline-block;border:1px solid #ff8cba60;border-radius:14px;padding:12px 18px;color:white;background:#e83e8720;margin:6px}
+.center{text-align:center}
+.surprise{display:none;margin-top:20px;color:#ffd0e3;animation:appear .7s ease}
+#musicStatus{font-size:13px;color:#ffb6d4}
+footer{text-align:center;padding:45px 15px;color:#cba7bb;font-size:13px}
+.float-heart{position:fixed;bottom:-40px;pointer-events:none;animation:floatUp linear forwards;z-index:-1}
+@keyframes beat{50%{transform:scale(1.15)}}
+@keyframes appear{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@keyframes floatUp{to{transform:translateY(-115vh) rotate(35deg);opacity:0}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<div id="login">
+  <div class="login-card">
+    <div class="heart">💌</div>
+    <div class="eyebrow">A LITTLE SECRET FOR YOU</div>
+    <h1>أهلًا يا جنى ❤️</h1>
+    <p>في حاجة معمولة مخصوص ليكي...<br>بس الأول، إيه الباسورد السري؟ (Jana.12)</p>
+    <form id="passwordForm">
+      <input id="password" type="password" placeholder="اكتبي الباسورد هنا..." autocomplete="off" required>
+      <button class="primary" type="submit">افتحي رسالتك ♡</button>
+    </form>
+    <p id="error" aria-live="polite"></p>
+  </div>
+</div>
+
+<div id="site">
+  <!-- ملف الأغنية -->
+  <audio id="loveSong" src="edkhely-omri.mp3" loop preload="auto"></audio>
+
+  <header class="hero">
+    <div class="eyebrow">MADE WITH LOVE · JUST FOR YOU</div>
+    <h1>جَنَى ❤️</h1>
+    <p>مش كل الحاجات الحلوة ينفع تتحكي في كلام... بس الحاجات اللي بتفرّحنا تستاهل نعملها.</p>
+    <a class="btn" href="#letter">اقرئي رسالتك ↓</a>
+  </header>
+
+  <section class="section" id="letter">
+    <div class="glass">
+      <h2>💌 جواب صغير ليكي</h2>
+      <div class="letter" id="typed"></div>
+      <div class="center"><button class="btn" id="showLetter">افتحي الرسالة ❤️</button></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="glass center">
+      <h2>🎵 أغنيتك الخاصة</h2>
+      <p>حسين الجسمي — إدخلي عمري</p>
+      <p>الأغنية بتشتغل في الخلفية بكل إيقاعاتها الجميلة.</p>
+      <button class="btn" id="musicBtn">🔊 إيقاف الأغنية</button>
+      <p id="musicStatus" aria-live="polite">الأغنية شغالة في الخلفية ❤️</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="glass center">
+      <h2>🎁 في مفاجأة ليكي!</h2>
+      <p>لسه في حاجة صغيرة مستخبية هنا...</p>
+      <button class="primary" id="surpriseBtn">اضغطي هنا يا جنى ✨</button>
+      <div class="surprise" id="surprise">
+        <div style="font-size:45px">🌹</div>
+        <h2>إنتِ تستاهلي كل حاجة حلوة</h2>
+        <p>أتمنى دايمًا تلاقي سبب تضحكي، وتفضلي محاطة بالحب والناس اللي بتتمنالك الخير. ❤️</p>
+        <p>ودي كانت مفاجأتك الصغيرة 💗</p>
+      </div>
+    </div>
+  </section>
+  <footer>اتعمل بحب مخصوص لجنى ❤️<br>A little corner of happiness ✨</footer>
+</div>
+
+<script>
+// الباسورد المطلوب
+const SECRET_PASSWORD = "Jana.12";
+
+const song = document.getElementById("loveSong");
+const musicBtn = document.getElementById("musicBtn");
+const musicStatus = document.getElementById("musicStatus");
+
+document.getElementById("passwordForm").addEventListener("submit", async function(event) {
+  event.preventDefault();
+  const entered = document.getElementById("password").value;
+  const error = document.getElementById("error");
+
+  if (entered !== SECRET_PASSWORD) {
+    error.textContent = "الباسورد مش صح يا جنى 🙈 جربي تاني";
+    return;
+  }
+
+  error.textContent = "";
+  document.getElementById("login").style.display = "none";
+  document.getElementById("site").style.display = "block";
+  window.scrollTo(0, 0);
+  startHearts();
+
+  // تشغيل الأغنية فور الضغط على زر الدخول وتجاوز الباسورد
+  song.volume = 0.5;
+  try {
+    await song.play();
+    musicBtn.textContent = "🔇 إيقاف الأغنية";
+    musicStatus.textContent = "الأغنية شغالة في الخلفية ❤️";
+  } catch (err) {
+    musicBtn.textContent = "🎵 اضغطي هنا لتشغيل الأغنية";
+    musicStatus.textContent = "اضغطي الزر لتشغيل الأغنية";
+  }
+});
+
+musicBtn.addEventListener("click", async function() {
+  if (song.paused) {
+    try {
+      await song.play();
+      musicBtn.textContent = "🔇 إيقاف الأغنية";
+      musicStatus.textContent = "الأغنية شغالة في الخلفية ❤️";
+    } catch {
+      musicStatus.textContent = "تأكد إن ملف edkhely-omri.mp3 موجود جنب ملف الموقع.";
+    }
+  } else {
+    song.pause();
+    musicBtn.textContent = "🔊 تشغيل الأغنية";
+    musicStatus.textContent = "الأغنية متوقفة مؤقتًا.";
+  }
+});
+
+const message = `يا جنى ❤️
+
+حبيت أعملك حاجة مختلفة عن أي رسالة عادية،
+حاجة تبقى ذكرى حلوة تقدري ترجعي لها وتبتسمي.
+
+يمكن مش بعرف أعبّر عن كل اللي جوايا بالكلام،
+بس حبيت أقولك إن وجودك بيفرق،
+وإن ضحكتك من الحاجات اللي أتمنى أشوفها دايمًا.
+
+عملتلك الموقع ده مخصوص،
+واخترت كل تفصيلة فيه علشان تبقى لحظة حلوة ليكي.
+
+أتمنى يومك يبقى جميل زي اللحظة اللي بتعيشيها دلوقتي،
+وإن الفرحة تفضل قريبة منك على طول. 🌹
+
+من قلبي ليكي يا جنى ❤️`;
+
+let letterOpened = false;
+document.getElementById("showLetter").addEventListener("click", function() {
+  if (letterOpened) return;
+  letterOpened = true;
+  this.style.display = "none";
+  const output = document.getElementById("typed");
+  let index = 0;
+  function typeNext() {
+    if (index < message.length) {
+      output.textContent += message[index++];
+      setTimeout(typeNext, 38);
+    }
+  }
+  typeNext();
+});
+
+document.getElementById("surpriseBtn").addEventListener("click", function() {
+  document.getElementById("surprise").style.display = "block";
+  this.textContent = "المفاجأة ظهرت ❤️";
+  this.disabled = true;
+});
+
+let heartsStarted = false;
+function startHearts() {
+  if (heartsStarted) return;
+  heartsStarted = true;
+  setInterval(() => {
+    const heart = document.createElement("div");
+    heart.className = "float-heart";
+    heart.textContent = ["♥", "♡", "💗", "✦"][Math.floor(Math.random() * 4)];
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (12 + Math.random() * 18) + "px";
+    heart.style.color = ["#ff8bbd", "#ffc6de", "#e96ca6"][Math.floor(Math.random() * 3)];
+    heart.style.animationDuration = (7 + Math.random() * 6) + "s";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 14000);
+  }, 650);
+}
+</script>
+</body>
+</html>
